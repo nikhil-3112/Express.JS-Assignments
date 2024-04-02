@@ -10,9 +10,11 @@ const logRequest = ("/",(req, res, next) => {
   next();
 });
 
+app.use(logRequest);
+
 // This route should only be accessible after passing through the 'logRequest' middleware. 
 // Make necessary changes in the route below.
-app.get("/", logRequest,(req, res) => {
+app.get("/" ,(req, res) => {
   res.send("Coding Ninjas!");
 });
 
